@@ -17,12 +17,11 @@ class TestClustergit:
         clustergit.main([])
 
         actual_out = mystdout.getvalue()
-        expected_out = """Starting git status...
-Scanning sub directories of .
+        expected_out = """Scanning sub directories of ['.']
 
 """
         actual_err = mystderr.getvalue()
-        expected_err = """Error: None of those sub directories had a .git file.
+        expected_err = """Error: None of those sub directories had a .git file
 """
         same("stdout should be alright", expected_out, actual_out)
         same("stderr should be alright", expected_err, actual_err)
